@@ -5,7 +5,7 @@ This is a C program *template* tailored for:
 - GCC, GDB, MAKE, VALGRING and DOXYGEN
 - VS CODE editor
 
-It **includes** the ADT List for proposed exercises during class.
+It **includes** the ADT List and ADT Map for proposed exercises during class.
 
 ## Cloning
 
@@ -14,7 +14,7 @@ Check **full example** below. This just explains the steps.
 You can *clone* this repository with:
 
 ```bash
-$> git clone https://github.com/estsetubal-atad/List_Template.git <program-dir-name>
+$> git clone https://github.com/estsetubal-atad/ADTMap_Template2.git <program-dir-name>
 ```
 
 where `<program-dir-name>` is the new name of the directory that will be created containing the cloned code. You'll now need to open this directory in *VS Code* as your *working directory*. The easiest way is just to simply:
@@ -28,7 +28,7 @@ From *VS Code* you can open an *integrated terminal*: Menu **Terminal > New Term
 ### Full example
 
 ```bash
-$> git clone https://github.com/estsetubal-atad/List_Template.git MyOwnCProgram
+$> git clone https://github.com/estsetubal-atad/ADTMap_Template2.git MyOwnCProgram
 $> code MyOwnCProgram
 ```
 

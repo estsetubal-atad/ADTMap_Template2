@@ -1,6 +1,35 @@
+# Select environment: 'linux' (default) or 'windows'
+ENV ?= linux
+
+# Common flags
+FLAGS = -Wall -Wextra
+
+# Environment-specific configuration
+ifeq ($(ENV),linux)
+    CC = gcc
+    EXECUTABLE = prog
+    RM = rm -f
+    DEBUG_FLAGS = -g
+endif
+
+ifeq ($(ENV),windows)
+    CC = gcc
+    EXECUTABLE = prog.exe
+    RM = del
+    DEBUG_FLAGS = -g -gdwarf-2
+endif
+
+# Safety check
+ifeq ($(filter $(ENV),linux windows),)
+    $(error Unknown ENV '$(ENV)'. Use ENV=linux or ENV=windows)
+endif
+
+# Targets
 default:
-	gcc -Wall -o prog main.c input.c student.c listElem.c listArrayList.c 
+	$(CC) $(FLAGS) -o $(EXECUTABLE) main.c input.c student.c listArrayList.c listElem.c mapArrayList.c mapElem.c
+
 debug:
-	gcc -Wall -o prog -g main.c input.c student.c listElem.c listArrayList.c 
+	$(CC) $(FLAGS) $(DEBUG_FLAGS) -o $(EXECUTABLE) main.c input.c student.c listArrayList.c listElem.c mapArrayList.c mapElem.c
+
 clean:
-	rm -f prog
+	$(RM) $(EXECUTABLE)
